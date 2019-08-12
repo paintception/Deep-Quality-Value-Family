@@ -13,6 +13,14 @@ RESULTS_PATH = "./final_results/"
 
 class Utils(object):
     def make_storing_paths(self, source_game, policy_mode, algorithm):
+        """
+        We ensure to create proper paths where to store the results of the experiments
+        :param source_game: the Atari game which is being tested
+        :param policy_mode: whether the algorithm is on-policy or off-policy
+        :param algorithm: which agent it is
+        :return: None
+        """
+
         self.rewards_path = RESULTS_PATH + "rewards/" + \
                             source_game + "/" + policy_mode + "/" + algorithm + "/"
         self.max_q_estimates_path = RESULTS_PATH + "q_estimates/" + \
@@ -28,6 +36,13 @@ class Utils(object):
             os.makedirs(self.weights_path)
 
     def save_results(self, episode_rewards, max_q_estimates, agent):
+        """
+        We store the results of the experiments
+        :param episode_rewards: the reward obtained by the agent at each testing episode
+        :param max_q_estimates: the max-Q estimate necessary for checking whether overestimation occurs
+        :param agent: the agent which is being tested
+        :return: None
+        """
         np.save(self.rewards_path + agent + "_rewards.npy", episode_rewards)
         np.save(
             self.max_q_estimates_path +
@@ -37,8 +52,8 @@ class Utils(object):
 
     def store_double_weights(self, model_1, model_2, policy_mode):
         """
-
-        :rtype: object
+        We store the weights of the models of the DQV-family of algorithms
+        The first one corresponds to the V-network while the second to the Q-network
         """
         if policy_mode == "offline":
             model_1.save_weights(self.weights_path + "state_value_model.h5")
@@ -48,6 +63,11 @@ class Utils(object):
             model_2.save_weights(self.weights_path + "state_action_value_model.h5")
 
     def store_single_weights(self, model):
+        """
+        We store the model of the DQN and DDQN algorithms
+        :param model: the model itself
+        :return: None
+        """
         model.save_weights(self.weights_path + "state_action_value_model.h5")
 
     def get_q_optimizer(self, q_model, nb_actions):
@@ -72,6 +92,13 @@ class Utils(object):
         return trainable
 
     def get_state_action_value_network(self, nb_actions, state_size):
+        """
+        We create the Q-network which is used by all tested algorithms
+        :param nb_actions: amount of possible actions in the environment
+        :param state_size: the size of the preprocessed frames which is 84x84x4
+        :return: the state-action-value network
+        """
+
         model = Sequential()
         model.add(Conv2D(32, (8, 8), strides=(4, 4),
                          activation='relu', input_shape=state_size))
@@ -85,9 +112,11 @@ class Utils(object):
 
     def get_state_value_network(self, state_size):
         """
-
-        :type state_size: object
+        We create the network which estimates the state-value function which is used by DQV and DQV-Max
+        :param state_size: the size of the preprocessed frames which is 84x84x4
+        :return: the state-value network
         """
+
         model = Sequential()
         model.add(Conv2D(32, (8, 8), strides=(4, 4),
                          activation='relu', input_shape=state_size))
@@ -102,6 +131,11 @@ class Utils(object):
         return model
 
     def pre_processing(self, state):
+        """
+        A pre-processing function which reshapes each state of the Atari learning environment
+        :param state: a state
+        :return: a reshaped gray-scaled version of the same state
+        """
         processed_state = np.uint8(
             resize(rgb2gray(state), (84, 84), mode='constant') * 255)
         return processed_state
