@@ -32,7 +32,6 @@ class dqvMaxAgent(object):
 
         self.q_optimizer = utils.get_q_optimizer(self.q_model, self.nb_actions)
 
-    @property
     def get_models(self):
         """
         :return: the state-value and state-action value networks
