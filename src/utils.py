@@ -8,7 +8,7 @@ from keras.layers import Dense, Flatten
 from keras.layers.convolutional import Conv2D
 import os
 
-RESULTS_PATH = "./final_results/"
+RESULTS_PATH = "../final_results/"
 
 
 class Utils(object):
@@ -54,6 +54,10 @@ class Utils(object):
         """
         We store the weights of the models of the DQV-family of algorithms
         The first one corresponds to the V-network while the second to the Q-network
+        :param model_1: the state-value network
+        :param model_2: the state-action-value network
+        :param policy_mode: whether the algorithm is on-policy or off-policy
+        :return: None
         """
         if policy_mode == "offline":
             model_1.save_weights(self.weights_path + "state_value_model.h5")

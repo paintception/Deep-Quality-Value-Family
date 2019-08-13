@@ -92,7 +92,7 @@ class dqvAgent(object):
 
     def train_replay(self):
         """
-        Function used for training from the experience replay memory buffer based on DQV-Max
+        Function used for training from the experience replay memory buffer based on DQV
         update rules.
 
         :return: None

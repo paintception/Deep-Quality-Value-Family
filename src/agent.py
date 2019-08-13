@@ -5,8 +5,8 @@ import numpy as np
 
 from utils import Utils
 from dqv import dqvAgent
-# from dqn import dqnAgent
-# from ddqn import ddqnAgent
+from dqn import dqnAgent
+from ddqn import ddqnAgent
 from dqv_max import dqvMaxAgent
 
 from duelling_dqv import duellingDQV
@@ -132,12 +132,15 @@ class RlAgent(object):
                 self.algorithm)
 
             if self.algorithm == "dqv" or self.algorithm == "dqv-max":
+                print('Storing the models.')
                 models = agent.get_models()
                 utils.store_double_weights(models[0], models[1], self.policy_mode)
+                print('Weights are stored')
 
             elif self.algorithm == "dqn" or "ddqn":
-                model = agent.get_model
+                print('Storing the model.')
+                model = agent.get_model()
                 utils.store_single_weights(model)
-
+                print('Weights are stored')
 
 utils = Utils()
