@@ -1,5 +1,6 @@
 import gym
 import random
+import time
 import numpy as np
 
 from skimage.color import rgb2gray
@@ -18,12 +19,12 @@ EPISODES = 1
 GAME = "EnduroDeterministic-v4"
 
 # For DQV
-#Q_WEIGHTS = "../models/EnduroDeterministic-v4/online/dqv/state_action_value_model.h5"
-#V_WEIGHTS = "../models/EnduroDeterministic-v4/online/dqv/state_value_model.h5"
+Q_WEIGHTS = "../models/EnduroDeterministic-v4/online/dqv/state_action_value_model.h5"
+V_WEIGHTS = "../models/EnduroDeterministic-v4/online/dqv/state_value_model.h5"
 
 # For DQV-Max
-Q_WEIGHTS = "../models/EnduroDeterministic-v4/offline/dqv-max/state_action_value_model.h5"
-V_WEIGHTS = "../models/EnduroDeterministic-v4/offline/dqv-max/state_value_model.h5"
+# Q_WEIGHTS = "../models/IceHockeyDeterministic-v4/offline/dqv-max/state_action_value_model.h5"
+# V_WEIGHTS = "../models/IceHockeyDeterministic-v4/offline/dqv-max/state_value_model.h5"
 
 utils = Utils()
 
@@ -32,6 +33,7 @@ class DQVAgent:
         self.render = False
         self.state_size = (84, 84, 4)
         self.action_size = action_size
+        self.no_op = 30
 
         self.q_model = utils.get_state_action_value_network(self.action_size, self.state_size)
         self.v_model = utils.get_state_value_network(self.state_size)
@@ -100,7 +102,6 @@ class DQVAgent:
     @staticmethod
     def pre_processing(observe):
         """
-
         :param observe: a state coming from the Atari ALE environment which gets pre-processed before using it as input for
                         the different models
         :return: a pre-processed state
@@ -118,15 +119,19 @@ if __name__ == "__main__":
 
     env = gym.make(GAME)
     agent = DQVAgent(action_size=3)
+    episode_rewards = []
 
-    for e in range(EPISODES):
+    starting_time = int(time.time())
+
+    while True:
+
         done = False
         dead = False
 
         step, score, start_life = 0, 0, 5
         observe = env.reset()
 
-        for _ in range(random.randint(1, 30)):
+        for _ in range(random.randint(1, agent.no_op)):
             observe, _, _, _ = env.step(1)
 
         state = agent.pre_processing(observe)
@@ -181,7 +186,11 @@ if __name__ == "__main__":
 
             k += 1
 
-        print("Reward obtained by the trained model is {}: ".format(episode_reward))
+        episode_rewards.append(episode_reward)
+
+        if time.time() - starting_time > 60*5:    # 5 minutes of emulator time
+            print("Averaged reward obtained by the trained model is {}: ".format(np.mean(episode_rewards)))
+            break
 
     print("The amount of times the max Q-value is higher than the state-value estimate is {}".format(agent.higher_q))
     print("The amount of times the state-value estimate is higher than the max Q-value is {}".format(agent.higher_v))
