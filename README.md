@@ -2,8 +2,9 @@
   
   This repo contains the code that releases a new family of Deep Reinforcement Learning (DRL) algorithms.
   The aim of these algorithms is to learn an approximation of the state-value V(s) function alongside an approximation of
-  the state-action value Q(s,a) function. Both approximations learn on each-others estimates, therefore 
-  yielding faster and more robust training.
+  the state-action value Q(s,a) function. Both approximations learn from each-others estimates, therefore 
+  yielding faster and more robust training. This work is an in-depth extension of our original [DQV-Learning](https://arxiv.org/abs/1810.00368)
+  paper.
   
   An in depth presentation of the several benefits that these algorithms provide are discussed in our **new paper**: 
   ['Approximating  two value functions instead of one: towards characterizing a new family of Deep Reinforcement 
