@@ -5,7 +5,7 @@
   the state-action value Q(s,a) function. Both approximations learn on each-others estimates, therefore 
   yielding faster and more robust training.
   
-  ![minipic](https://github.com/paintception/Deep-Quality-Value-Family-/blob/master/figures/dqv_max_boxing.jpg) ![alt text](https://github.com/paintception/Deep-Quality-Value-Family-/blob/master/figures/dqv_max_pong.jpg)  ![alt text](https://github.com/paintception/Deep-Quality-Value-Family-/blob/master/figures/dqv_max_enduro.jpg)
+  ![alt text](https://github.com/paintception/Deep-Quality-Value-Family-/blob/master/figures/dqv_max_enduro.jpg)![alt text](https://github.com/paintception/Deep-Quality-Value-Family-/blob/master/figures/dqv_max_enduro.jpg)
   
   An in depth presentation of the several benefits that these algorithms provide are discussed in our **new paper**: 
   ['Approximating  two value functions instead of one: towards characterizing a new family of Deep Reinforcement 
@@ -36,5 +36,7 @@
    script. The script will compute the averaged expected return of all visited states and show that the algorithms of the
    DQV-family suffer less from the overestimation bias of the Q function. The script will
    also show that our algorithms do not overestimate the V function instead of the Q function.
+   
+   ![alt text](https://github.com/paintception/Deep-Quality-Value-Family-/blob/master/figures/dqv_max_boxing.jpg)
    
    We are currently benchmarking our algorithms on as many games of the Atari benchmark as possible: `./src/DQV_FULL_ATARI.sh`.
