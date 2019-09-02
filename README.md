@@ -5,7 +5,7 @@
   the state-action value Q(s,a) function. Both approximations learn on each-others estimates, therefore 
   yielding faster and more robust training.
   
-  ![alt text](https://github.com/paintception/Deep-Quality-Value-Family-/blob/master/figures/dqv_max_boxing.jpg)![alt text](https://github.com/paintception/Deep-Quality-Value-Family-/blob/master/figures/dqv_max_pong.jpg)  ![alt text](https://github.com/paintception/Deep-Quality-Value-Family-/blob/master/figures/dqv_max_enduro.jpg)
+  ![alt text](https://github.com/paintception/Deep-Quality-Value-Family-/blob/master/figures/dqv_max_boxing.jpg) ![alt text](https://github.com/paintception/Deep-Quality-Value-Family-/blob/master/figures/dqv_max_pong.jpg)  ![alt text](https://github.com/paintception/Deep-Quality-Value-Family-/blob/master/figures/dqv_max_enduro.jpg=20x20)
   
   An in depth presentation of the several benefits that these algorithms provide are discussed in our **new paper**: 
   ['Approximating  two value functions instead of one: towards characterizing a new family of Deep Reinforcement 
