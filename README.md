@@ -1,4 +1,4 @@
-# A new family of Deep Reinforcement Learning Algorithms: DQV, Dueling-DQV and DQV-Max Learning
+# A new family of Deep Reinforcement Learning algorithms: DQV, Dueling-DQV and DQV-Max Learning
   
   This repo contains the code that releases a new family of Deep Reinforcement Learning (DRL) algorithms.
   The aim of these algorithms is to learn an approximation of the state-value V(s) function alongside an approximation of
