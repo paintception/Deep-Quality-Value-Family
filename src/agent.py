@@ -48,7 +48,7 @@ class RlAgent(object):
         elif self.policy_mode == "online":
             if self.algorithm == "dqv":
                 agent = dqvAgent(self.nb_actions)
-            elif self.algorithm == "duelling-dqv":
+            elif self.algorithm == "dueling-dqv":
                 agent = duellingDQV(self.nb_actions)
 
         self.start_training(agent)

@@ -10,7 +10,7 @@ from keras import backend as K
 
 class duellingDQV(object):
     def __init__(self, nb_actions):
-        self.render = False
+        self.render = True
         self.target_model = True
         self.nb_actions = nb_actions
         self.load_model = False
@@ -122,7 +122,7 @@ class duellingDQV(object):
             input=[input_state],
             outputs=[state_action_output],
             name='state_action_duelling_dqv')
-        self.v_duelling_part = Model(
+        self.target_v_duelling_part = Model(
             input=[input_state],
             outputs=[state_value_output],
             name='value_duelling_dqv')
