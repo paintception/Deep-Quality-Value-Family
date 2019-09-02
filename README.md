@@ -11,7 +11,7 @@
    
   The main algorithms presented in this repo are:
   
-   * Dueling Deep Quality-Value (Dueling-DQV) Learning: **This Repo** 
+   * Dueling Deep Quality-Value (Dueling-DQV) Learning (soon): **This Repo** 
    * Deep Quality-Value-Max (DQV-Max) Learning: **This Repo**
    * Deep Quality-Value (DQV) Learning: originally presented in ['DQV-Learning''](https://github.com/paintception/Deep-Quality-Value-DQV-Learning-),
     is now properly refactored.
