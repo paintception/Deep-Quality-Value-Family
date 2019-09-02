@@ -5,8 +5,6 @@
   the state-action value Q(s,a) function. Both approximations learn on each-others estimates, therefore 
   yielding faster and more robust training.
   
-  ![alt text](https://github.com/paintception/Deep-Quality-Value-Family-/blob/master/figures/dqv_max_enduro.jpg)![alt text](https://github.com/paintception/Deep-Quality-Value-Family-/blob/master/figures/dqv_max_enduro.jpg)
-  
   An in depth presentation of the several benefits that these algorithms provide are discussed in our **new paper**: 
   ['Approximating  two value functions instead of one: towards characterizing a new family of Deep Reinforcement 
   Learning Algorithms'](https://arxiv.org/submit/2825529/view). 
@@ -24,6 +22,8 @@
    * Double Deep Q-Learning: [DDQN](https://arxiv.org/abs/1509.06461) 
    
    which have been used for all the experimental comparisons presented in our work.
+      
+  ![alt text](https://github.com/paintception/Deep-Quality-Value-Family-/blob/master/figures/dqv_max_pong.jpg)![alt text](https://github.com/paintception/Deep-Quality-Value-Family-/blob/master/figures/dqv_max_enduro.jpg)
    
    If you aim to train an agent from scratch on a game of the Atari Arcade Learning benchmark (ALE) run the 
    `training_job.sh` script: it allows you to choose which type of agent to train according to the type of policy 
