@@ -37,6 +37,6 @@
    DQV-family suffer less from the overestimation bias of the Q function. The script will
    also show that our algorithms do not overestimate the V function instead of the Q function.
    
-   ![alt text](https://github.com/paintception/Deep-Quality-Value-Family-/blob/master/figures/dqv_max_boxing.jpg)
+   ![alt text](https://github.com/paintception/Deep-Quality-Value-Family-/blob/master/figures/DQV-Max_estimates.jpg)
    
    We are currently benchmarking our algorithms on as many games of the Atari benchmark as possible: `./src/DQV_FULL_ATARI.sh`.
