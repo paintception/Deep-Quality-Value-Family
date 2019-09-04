@@ -6,9 +6,11 @@
   yielding faster and more robust training. This work is an in-depth extension of our original [DQV-Learning](https://arxiv.org/abs/1810.00368)
   paper.
   
-  An in depth presentation of the several benefits that these algorithms provide are discussed in our **new paper**: 
-  ['Approximating  two value functions instead of one: towards characterizing a new family of Deep Reinforcement 
-  Learning Algorithms'](https://arxiv.org/submit/2825529/view). 
+  An in depth presentation of the several benefits that these algorithms provide are discussed in our new paper: 
+  **'Approximating  two value functions instead of one: towards characterizing a new family of Deep Reinforcement 
+  Learning Algorithms'**.
+  
+  The paper is currently being uploaded on Arxiv, for now you can check the `./paper/` folder for a pdf version of it.
    
   The main algorithms presented in this repo are:
   
