@@ -10,8 +10,8 @@
   **'Approximating  two value functions instead of one: towards characterizing a new family of Deep Reinforcement 
   Learning Algorithms'**.
   
-  The paper is currently being uploaded on Arxiv, for now you can check the `./paper/` folder for a pdf version of it.
-   
+  Be sure to check out Arxiv for a [pre-print](https://arxiv.org/abs/1909.01779) of our work!
+  
   The main algorithms presented in this repo are:
   
    * Dueling Deep Quality-Value (Dueling-DQV) Learning: **This Repo** 
