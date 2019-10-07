@@ -4,7 +4,7 @@
   The aim of these algorithms is to learn an approximation of the state-value V(s) function alongside an approximation of
   the state-action value Q(s,a) function. Both approximations learn from each-others estimates, therefore 
   yielding faster and more robust training. This work is an in-depth extension of our original [DQV-Learning](https://arxiv.org/abs/1810.00368)
-  paper and will be presented in December at the coming #NeurIPS Deep Reinforcement Learning (DRLW) Workshop in Vancouver (Canada).
+  paper and will be presented in December at the coming **NeurIPS Deep Reinforcement Learning (DRLW) Workshop** in Vancouver (Canada).
   
   An in depth presentation of the several benefits that these algorithms provide are discussed in our new paper: 
   **'Approximating  two value functions instead of one: towards characterizing a new family of Deep Reinforcement 
