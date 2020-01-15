@@ -58,7 +58,7 @@ class dqvMaxAgent(object):
         history = np.float32(history / 255.0)
         q_values = self.q_model.predict(history)
 
-        max_q = abs(max(q_values[0]))
+        max_q = max(q_values[0])
 
         return max_q
 
